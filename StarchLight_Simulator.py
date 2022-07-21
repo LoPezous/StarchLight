@@ -25,9 +25,9 @@ BETA3 = 1 # lactate to electron rate
 
 FRAME_RATE = 10          # Refresh graphics very FRAME_RATE hours
 #DENSITY = 100
-starch_density = 100
-ecoli_density = 100
-so_density = 100
+starch_density = 10
+ecoli_density = 10
+so_density = 10
 e_density = 0
 l_density = 0
 g_density = 0
@@ -170,7 +170,8 @@ class glucose(Mobile):
         turn_lactate = self.has_ecoli_neighbor()
 
         if (turn_lactate and np.random.rand() < BETA2):
-            return lactate(self.x, self.y)
+            for i in range(2): # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+                return lactate(self.x, self.y)
         return self
 
 class ecoli(Mobile):
@@ -348,7 +349,7 @@ def create_data():
 import matplotlib.animation as animation
 people = create_data()
 
-fig = plt.figure(1)
+fig = plt.figure(1, figsize = (20.,10.))
 duration = 2 # in days
 anim = animation.FuncAnimation(fig, next_loop_event, frames=np.arange(duration*24), interval=100, repeat=False)
 
