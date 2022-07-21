@@ -33,24 +33,6 @@ e_density = 0
 l_density = 0
 g_density = 0
 
-"""
-def compute_plane_parameters(A, B, C):
-    a = (B[1]-A[1])*(C[2]-A[2]) - (C[1]-A[1])*(B[2]-A[2])
-# Get a and b of the line equation (ax + b) from 2 points
-def compute_line_parameters(p1, p2):
-    a = (p1[1] - p2[1]) / (p1[0] - p2[0])
-    b = p1[1] - a * p1[0]
-    return a, b
-
-## The locations of borders on the map
-A = (0., 1.)
-B = (1.,0.)
-C = (0.,1.)
-D = (1.,0.)
-LINE1 = compute_line_parameters(A, B)
-LINE2 = compute_line_parameters(B, C)
-LINE3 = compute_line_parameters(C, D)
-"""
 class SIRState(Enum):
     STARCH = 0
     GLUCOSE = 1
@@ -59,13 +41,9 @@ class SIRState(Enum):
     AMYLASE = 4
     ECOLI = 5
     SO = 6
-
-    
+  
 def distance(x1, y1, z1, x2, y2, z2):
     return np.sqrt((x2 - x1)**2 + (y2 - y1)**2 + (z2 - z1)**2)
-
-
-
 
 @dataclass
 class Mobile:
@@ -93,9 +71,7 @@ class Mobile:
                 
                 return True
             
-        
-        
-    
+          
     def has_ecoli_neighbor(self):
         for neighbor in self.succ:
             if (neighbor.state == SIRState.ECOLI):
@@ -209,9 +185,6 @@ def update_graph(people):
             people[j].succ.append(people[i])
 
 
-
-
-
 def display_map(people, ax = None):
     x = [ p.x for p in people]
     y = [ p.y for p in people]
@@ -319,8 +292,6 @@ def create_data():
         data.append(to_add)
         
         
-        
-
     return data
 
 
