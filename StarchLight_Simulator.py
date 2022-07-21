@@ -21,11 +21,11 @@ DONE = 1
 SOCIAL_DISTANCE = 0.0000007
 BETA1 = 1 # amylase rate
 BETA2 = 1 # glucose to lactate rate
-BETA3 = 1 # lactate to electron rate
+BETA3 = 0.3 # lactate to electron rate
 
 FRAME_RATE = 10          # Refresh graphics very FRAME_RATE hours
 #DENSITY = 100
-starch_density = 10
+starch_density = 100
 ecoli_density = 10
 so_density = 10
 e_density = 0
