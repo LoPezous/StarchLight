@@ -1,7 +1,8 @@
 To add:
-* 3D
+* 3D (done)
 * Membrane rate
-* Static Starch
+* Different speeds (prevents interaction don't know why)
 * Amylase secretion
 
-![simulation](https://user-images.githubusercontent.com/66411147/180283225-8cccf2c5-878c-4bde-8182-09c03aa20f34.gif)
+![simulation](https://user-images.githubusercontent.com/66411147/180600178-a502323e-3b8a-4552-b7d1-e8744cc0e279.gif)
+
