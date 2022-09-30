@@ -4,6 +4,7 @@ Created on Thu Jul 21 12:10:27 2022
 
 @author: marti
 """
+from pickle import FALSE
 from molecules import Mobile
 import pandas as pd
 import numpy as np
@@ -242,8 +243,17 @@ for time in np.arange(duration * 24):
     donnees.append(entry)
 
 df = pd.DataFrame(donnees)
+Amperes = ((df.at[df.index[-1],'Electron']/(6.2*10**18)))/3600
+Power = Amperes * Volts
+upscale_factor = (1/starch_mass)*1000
 print(df)
-#plt.figure(figsize=(20, 10))
+print(Amperes, 'A.h')
+print('Mean intensity: ', Amperes/((duration*24)/60), 'A ')
+print('Mean power: ', Power/((duration*24)/60), 'W ')
+print('glucose mass: ', starch_mass, ' g')
+print('Prediction for 1kg: ', Amperes*upscale_factor, 'A.h ')
+print('Prediction for 1kg: ', Power*upscale_factor, 'W.h ')
+#plt.figure(figsize=(20, 10)) 
 df.plot()
 plot_population(molecules_list)
 plt.savefig('graph2.png')

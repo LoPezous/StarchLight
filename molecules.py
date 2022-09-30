@@ -62,7 +62,7 @@ class Mobile:
         self.y = wrap_into_box(new_y, L)
         new_z = self.z + dz
         self.z = wrap_into_box(new_z, L)
-        print(self.x, self.y, self.z)
+        #print(self.x, self.y, self.z)
     
 
     def reaction(self):
@@ -110,7 +110,7 @@ class Lactate(Mobile):
         turn_electron = self.has_neighbor_of_type(SIRState.SO)
         if turn_electron and np.random.rand() < BETA3:
             self.status = SEEN
-            return Electron(self.x, self.y, self.z)
+            return [Electron(self.x, self.y, self.z), Electron(self.x, self.y, self.z), Electron(self.x, self.y, self.z), Electron(self.x, self.y, self.z), Electron(self.x, self.y, self.z)]
         return self
 
 

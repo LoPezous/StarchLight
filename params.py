@@ -1,8 +1,8 @@
 import numpy as np
 L = 1
 AREA_SIZE = L**3
-SPEED = 50
-MAX_MOVE = 0.5*L
+#SPEED = 50
+MAX_MOVE = 0.01*L
 #SIGMA = (SPEED * 1000. / 24. / AREA_SIZE) / (3. * np.sqrt(2))
 UNSEEN = 0
 SEEN = 1
@@ -15,9 +15,11 @@ BETA3 = 0.3  # lactate to electron rate
 FRAME_RATE = 1  # Refresh graphics very FRAME_RATE hours
 # DENSITY = 100
 starch_density = 100
-ecoli_density = 100
-so_density = 100
+ecoli_density = 10
+so_density = 10
 e_density = 0
 l_density = 0
 g_density = 0
-duration = 1
+duration = 2.5 #1 hour
+Volts = 1
+starch_mass = (starch_density*180)/(6*10**23)
