@@ -1,4 +1,8 @@
+# Starchlight MFC model
 In the context of the 2022 iGEM competition, and as part of the Starchlight project, I modeled the main phenomena underlying a special kind of bacterial fuel cell. The model was then tuned according to experimental data we gathered in the lab to predict the output of an industrial-scale device. The simulation also allowed us to further identify the main bottlenecks of a large-scale device.
+
+![image](https://user-images.githubusercontent.com/66411147/233458729-d9c531db-a803-433a-8cfd-7b342f6ed188.png)
+
 
 Modify **params.py** to change the simulation's parameters.  
 Modify **molecules.py** to alter the particle interactions.
